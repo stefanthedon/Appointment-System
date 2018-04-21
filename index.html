@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fonts/flaticon.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <title>Clinic Appointment</title>
+
+</head>
+
+<body>
+
+    <!--    HEADER SECTION-->
+
+    <div class="header">
+        <nav class="topnav">
+            <div class="logo">
+                <a href="index.html"><img src="/assets/img/logo.png" alt="LOGO"></a>
+            </div>
+            <div class="nav">
+                <a href="" class="active">HOME</a>
+                <a href="">BOOK APPOINTMENT</a>
+                <a href="">CONTACT US</a>
+                <button class="signin-btn" id="signin-btn" onclick="document.getElementById('sign-in').style.display='block'">SIGN IN</button>
+            </div>
+        </nav>
+    </div>
+
+    <!--    SIGN IN MODAL-->
+
+    <div id="sign-in" class="sign-in-modal">
+        <form action="login.php" class="modal-content animate" method="post">
+            <div class="close-container">
+                <span onclick="document.getElementById('sign-in').style.display='none'" class="close" title="Close Login">&times;</span>
+            </div>
+            <div class="signin-content">
+                <h1>Sign In</h1>
+                <input type="text" class="user-name" id="user-name" name="username" placeholder="Userame" required>
+                <input type="password" class="password" id="password" name="password" placeholder="Password" required minlength="8">
+                <button type="submit" class="login-btn" id="login-btn" onclick="login.php" name="submitButton">LOGIN</button>
+            </div>
+            <div class="cancel">
+                <button type="button" onclick="document.getElementById('sign-in').style.display='none'" class="cancel-btn">CANCEL</button><br>
+                <span class="psw"><a href="#">Forgot password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <!--    HERO SECTION-->
+
+    <div class="hero">
+        <!--
+        <div class="hero-content">
+            <h1>Blue Flame Dental Services</h1>
+            <p>Welcome to our </p>
+        </div>
+        <div class="hero-img" data-stellar-background-ratio="0.5" style="background-image: url(assets/img/slider.png); background-repeat: no-repeat; background-position: center">
+
+        </div>
+-->
+        <div class="slideshow-container">
+
+            <div class="slides">
+                <div class="numbertext">1 / 3</div>
+                <img src="assets/img/slider.jpg" style="width:100%">
+                <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text">Good Oral Care Support</div>
+            </div>
+
+            <div class="slides">
+                <div class="numbertext">2 / 3</div>
+                <img src="assets/img/slider1.jpg" style="width:100%">
+                <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text">Top Dentists</div>
+            </div>
+
+            <div class="slides">
+                <div class="numbertext">3 / 3</div>
+                <img src="assets/img/slider3.jpg" style="width:100%">
+                <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black text">Outstanding Customer Support</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            <button class="hero-btn w3-display-bottommiddle" id="hero-btn"><a href="#services">BOOK NOW</a></button>
+
+        </div>
+<!--
+        <div>
+            <button class="hero-btn" id="hero-btn"><a href="#services">BOOK NOW</a></button>
+        </div>
+-->
+    </div>
+
+    <!--    SERVICES SECTION-->
+
+    <div class="services" id="services">
+       <div class="service-content">
+        <h1>Welcome To Our Easy To Use Booking Widget</h1>
+        <ul>
+            <li>&#10095 Click on book now below</li>
+            <li>&#10095 Add your details</li>
+            <li>&#10095 Check if details are correct</li>
+            <li>&#10095 Click Book Appointment</li>
+            <li>&#10095 Wait on the doctor to call you</li>
+        </ul>
+        </div>
+        <div>
+            <button class="modal-btn" id="modal-btn" onclick="document.getElementById('book').style.display='block'">BOOK NOW</button>
+        </div>
+    </div>
+
+    <!--    BOOK MODAL-->
+
+    <div id="book" class="book-modal">
+        <form action="appointment.php" class="modal-content animate" method="post">
+            <div class="close-container">
+                <span onclick="document.getElementById('book').style.display='none'" class="close" title="Close Login">&times;</span>
+            </div>
+            <div class="details-content">
+                <h1>Enter Appointment Details</h1>
+                <input type="text" class="f-name" id="f-name" placeholder="First Name" name="f_name" required minlength="4"> <br>
+                <input type="text" class="l-name" id="l-name" placeholder="Last Name" name="l_name" required minlength="4"> <br>
+                <div id="radioset">
+                    <label for="radio1">Male</label>
+                    <input type="radio" name="radio" id="radio1" value="Male">
+                    <label for="radio2">Female</label>
+                    <input type="radio" name="radio" id="radio2" value="Female">
+                </div>
+                <br>
+                <input type="text" class="phone" id="phone" placeholder="Telephone No." name="telephone" required> <br>
+                <input type="book-email" class="book-email" id="book-email" placeholder="Email" name="email" required> <br>
+                <input type="text" class="datepicker" id="datepicker" placeholder="Date" name="date"> <br>
+                <button type="submit" class="book-btn" id="book-btn">BOOK</button>
+            </div>
+            <div class="cancel-container">
+                <button type="button" onclick="document.getElementById('book').style.display='none'" class="cancelBtn">CANCEL</button><br>
+                <span class="psw"><a href="#">Forgot password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <!--    CONTACT US SECTION-->
+
+    <div class="contact">
+        <div class="instructions">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="contact-us">
+            <div class="container" id="address-container">
+                <h2>Address</h2>
+                <ul>
+                    <li class="flaticon-facebook-placeholder-for-locate-places-on-maps">Nairobi</li>
+                    <li class="flaticon-phone-call">+254 719 762 808</li>
+                    <li class="flaticon-envelope">don.parminter@gmail.com</li>
+                    <li class="flaticon-world">www.ourclinic.com</li>
+                </ul>
+            </div>
+            <form action="contact_us.php" method="post">
+                <div class="container" id="message-container">
+                    <input type="text" id="name" class="form" placeholder="Name" name="name">
+                    <input type="email" id="email" class="form" placeholder="Email" name="email"> <br>
+                    <textarea name="message" class="form" id="message" cols="30" rows="7" placeholder="Message"></textarea> <br>
+                    <button class="submit-btn" type="submit" id="submit-btn">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--    FOOTER SECTION-->
+
+    <footer>
+        <div class="footer">
+            <div class="social">
+                <p class="social-icons">
+                    <a href="#"><i class="flaticon-twitter-sign"></i></a>
+                    <a href="#"><i class="flaticon-facebook-logo-1"></i></a>
+                    <a href="#"><i class="flaticon-instagram-logo"></i></a>
+                </p>
+                <p>Copyright 2018 <a href="#">Dental Services</a>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/external/jquery/jquery.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
